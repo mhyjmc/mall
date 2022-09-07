@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "home_class1": "奶粉辅食",
+      "home_class2": "奶粉，辅食，营养品"
+    },
+    {
+      "home_class1": "纸尿裤",
+      "home_class2": "纸尿裤，婴儿湿巾"
+    },
+    {
+      "home_class1": "洗护用品",
+      "home_class2": "母婴洗护用品，孕婴童用品"
+    },
+    {
+      "home_class1": "儿童玩具",
+      "home_class2": "婴幼玩具，遥控玩具，积木拼插"
+    },
+    {
+      "home_class1": "车窗座椅",
+      "home_class2": "婴儿推车，儿童安全座椅"
+    },
+    {
+      "home_class1": "儿童童鞋",
+      "home_class2": "童装，童鞋，婴童内衣及配饰"
+    },
+    {
+      "home_class1": "儿童图片",
+      "home_class2": "0-2岁，早教启蒙，孕产育儿"
+    },
+    {
+      "home_class1": "孕妈专区",
+      "home_class2": "孕妇装，背婴带，母婴服务"
+    }
+  ]
+}

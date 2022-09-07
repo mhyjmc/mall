@@ -1,66 +1,6 @@
 <template>
-  <div>
-    <div class="site-nav-bg">
-      <div class="site-nav w1200">
-        <p class="sn-back-home">
-          <i class="layui-icon layui-icon-home"></i>
-          <router-link to="">首页</router-link>
-        </p>
-        <div class="sn-quick-menu">
-          <div class="login"><router-link to="#">登录</router-link></div>
-          <div class="sp-cart">
-            <router-link to="#">购物车</router-link> <span>2</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="header">
-      <div class="headerLayout w1200">
-        <div class="headerCon">
-          <h1 class="mallLogo">
-            <a href="#" title="母婴商城">
-              <img src="./imags/logo.png" />
-            </a>
-          </h1>
-          <div class="mallSearch">
-            <form action="" class="layui-form" novalidate>
-              <input
-                type="text"
-                name="title"
-                required
-                lay-verify="required"
-                autocomplete="off"
-                class="layui-input"
-                placeholder="请输入需要的商品"
-              />
-              <button class="layui-btn" lay-submit lay-filter="formDemo">
-                <i class="layui-icon layui-icon-search"></i>
-              </button>
-              <input type="hidden" name="" value="" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div id="app">
     <div class="content content-nav-base datails-content">
-      <div class="main-nav">
-        <div class="inner-cont0">
-          <div class="inner-cont1 w1200">
-            <div class="inner-cont2">
-              <a href="commodity.html" class="active">所有商品</a>
-              <a href="buytoday.html">今日团购</a>
-              <a href="information.html">母婴资讯</a>
-              <a href="about.html">关于我们</a>
-              <!-- <router-link class="active">所有商品</router-link>
-              <router-link>今日团购</router-link>
-              <router-link>母婴资讯</router-link>
-              <router-link>关于我们</router-link> -->
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="data-cont-wrap w1200">
         <div class="crumb">
           <a href="javascript:;">首页</a>
@@ -108,7 +48,7 @@
                       @click="colorFn"
                       >白色</span
                     >
-                    <span class="btn" :class="{ active: show }" @click="color"
+                    <span class="btn" :class="{ active: !isShow }" @click="colorFn"
                       >粉色</span
                     >
                   </div>
@@ -130,7 +70,7 @@
                 </div>
               </div>
               <div class="choose-btns">
-                <button class="layui-btn layui-btn-primary purchase-btn">
+                <button class="layui-btn layui-btn-primary purchase-btn" @class="buyFn">
                   立刻购买
                 </button>
                 <button class="layui-btn layui-btn-danger car-btn">
@@ -193,12 +133,14 @@ export default {
       value: 1,
       price: 99,
       isShow: true,
-      show: false,
     };
   },
   activated() {},
   watch: {},
-  created() {},
+  created() {
+    //创建时拿到商品详情数据
+    
+  },
   mounted() {},
   methods: {
     //+点击事件
@@ -214,18 +156,16 @@ export default {
       }
     },
     //颜色选择事件
-    colorFn() {
-      this.isShow = !this.isShow;
-      if (this.show) {
-        this.show = !this.show;
-      }
-    },
-    color() {
-      this.show = !this.show;
-      if (this.isShow) {
+    colorFn(e) {
+      if(!e.target.className.includes('active')){
         this.isShow = !this.isShow;
       }
+      
     },
+    //购买按钮事件 拿到商品的唯一id 获取数量，颜色，地址
+    buyFn(){
+
+    }
   },
 };
 </script>
